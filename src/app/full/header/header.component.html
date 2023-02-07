@@ -1,0 +1,148 @@
+<div >
+      <!-- end container -->
+       <div class="topbar-main">
+        <div class="container-fluid" style="background-color: gold;">
+         <!-- LOGO -->
+            <div class="topbar-left">
+              <a href="javascript:void(0);" class="logo m-t-10">
+              
+                <!-- <img alt="" src="./assets/img/clafly.png" class="img-responsive"> -->
+              </a>
+            </div>
+         
+            <a href="javascript:void(0);" class="logo">
+            </a>
+            <nav class="navbar-custom " style="background-color: transparent">
+              <a href="javascript:void(0);" class="logo"></a>
+              <ul class="header-nav header-nav-profile float-right m-t-10">
+              
+           
+          <!-- <li class="list-inline-item">
+  
+                  <a id="toggle" class="navbar-toggle" appMobileSidebarToggler>
+                    <div class="lines">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </a>
+  
+                </li> -->
+                <li class="dropdown list-inline-item dropdown notification-list">
+                  
+                  <a href="javascript:void(0);" data-toggle="dropdown"
+                    class="dropdown-toggle ink-reaction waves-effect waves-light nav-user">
+                    <!-- <img *ngIf="currentuser.item.userimagepath" src="{{imageUrl}}{{currentuser.item.userimagepath}}" alt="" class="rounded-circle prof1"> -->
+                    
+                    <img  src="../../../assets/imgs/profile.png" alt="" class="rounded-circle prof1">
+                    <span class="profile-info text-black m-l-5" style="margin-bottom: 1rem;" >
+  
+                      <!-- {{currentuser.item.firstName}} {{currentuser.item.lastName}} -->
+              
+                         <span >Bank Manager</span>
+                      <!-- <span *ngIf="currentuser.item.userGroupName">{{currentuser.item.userGroupName}}</span> -->
+                      <!-- <span *ngIf="currentuser.item.userTitle">{{currentuser.item.userTitle}}</span> -->
+                    </span>
+  
+                  </a>
+  
+  
+                  <div class="dropdown-menu dropdown-menu-right profile-dropdown" aria-labelledby="Preview"
+                    x-placement="bottom-end"
+                    style="position: absolute; transform: translate3d(35px, 64px, 0px); top:10px; left: 0px; will-change: transform;">
+                    <div class="dropdown-item noti-title">
+                      <h4 class="text-overflow">
+                        <small style="color:#fff">Hi chandran</small>
+                      </h4>
+                    </div>
+  
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" routerLink="/profile">
+                      <!-- <em class="zmdi zmdi-account-circle"></em> -->
+                      <span>Profile</span>
+                    </a>
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" (click)="logout()">
+                      <em class="zmdi zmdi-power"></em>
+                      <span>Logout</span>
+                    </a>
+  
+                  </div>
+  
+  
+  
+                </li>
+                <!--end .dropdown -->
+  
+              </ul>
+  
+  
+  
+            </nav>
+          </div>
+          <!-- end container -->
+        </div>
+        <!-- end topbar-main -->
+        
+          <div class="navbar-custom nav-res-fix"  >
+            <div class="container-fluid" style="background-color: slategray;">
+  
+              <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu" style="margin-bottom: 0rem;">
+                  <li class="has-submenu">
+                    <a href="javascript:void(0);" appMobileSidebarToggler  routerLink="/user/myAct" >
+                      <h4 class="badge badge-primary" > My Accounts</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a  routerLink="/user/fundTrs" >
+                      <h4 class="badge badge-success" style="color:white;">Fund Transfer</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/edeposits" >
+                      <h4 class="badge badge-warning">E-Deposite</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/billpymts" >
+                      <h4 class="badge badge-danger">Bill payments</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/topup&rcharge" >
+                      <h4 class="badge badge-secondary">Top Up & Recharge</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/manageCards" >
+                      <h4 class="badge badge-dark">Manage Cards</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/services" >
+                      <h4 class="badge badge-light">Service</h4>
+                    </a>
+                  </li>
+                  <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/requests" >
+                      <h4 class="badge badge-info"> Requests</h4>
+                    </a>
+                  </li>
+                  <!-- <li class="has-submenu" >
+                    <a href="javascript:void(0);" appMobileSidebarToggler routerLink="/user/home" >
+                      <h4 class="badge badge-primary"> PPF Account</h4>
+                    </a>
+                  </li> -->
+                </ul>
+                <!-- End navigation menu  -->
+              </div>
+  
+            </div>
+          </div>
+       
+     
+  </div>
+  
+
+

@@ -2,7 +2,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "skipLibCheck": true,
+    "types": ["jquery"],
+    "paths": {
+      "jszip": [
+        "node_modules/jszip/dist/jszip.min.js"
+      ]
+    }
   },
   "files": [
     "src/main.ts",

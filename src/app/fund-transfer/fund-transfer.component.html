@@ -1,0 +1,25 @@
+<form  [formGroup]="testForm" (ngSubmit)="submitFunction(testForm.value)" action="">
+    <div class="text-center mt-2">
+        <label for="date"> Date :</label>
+        <input class="ml-1" formControlName="date" type="date" [(ngModel)]="date">
+    </div>
+    <div class="text-center">
+        <label for="time"> time : </label>
+        <select class="ml-1" aria-placeholder="HH"  formControlName="HH" name="hours" id="hours" [(ngModel)]="hr">
+            <option value="0"  selected>0</option>
+            <option *ngFor="let data of hours" value="{{data}}"> {{data}}</option>
+        </select >
+        <select  class="ml-1" aria-placeholder="min" formControlName="mm"  name="min" id="min" [(ngModel)]="minute">
+            <option value="0"  selected>0 </option>
+            <option *ngFor="let data of min" value="{{data}}">{{data}}</option>
+        </select >
+        <select  class="ml-1" aria-placeholder="sec" formControlName="sec"  name="sec" id="sec" [(ngModel)]="seconds">
+            <option   value="0" selected>0 </option>
+            <option *ngFor="let data of min" value="{{data}}">{{data}}</option>
+        </select >
+    </div>
+    <div class="text-center">
+         <button class="btn btn-primary" type="submit"  >Set</button>
+         <button class="btn btn-secondary ml-1" (click)="testForm.reset()" type="button">Reset</button>
+    </div>
+</form>

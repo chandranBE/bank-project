@@ -1,0 +1,39 @@
+
+
+.container {
+  position: absolute;
+  max-width: 10cm;
+  /* margin-right: 14.5cm; */
+  margin-left: 35%;
+  margin-top: 3.5cm;
+  background-color: khaki;
+  border-radius: 10px;
+   
+  }
+  .bg-img {
+    /* The image used */
+    background-image: url("../../assets/imgs/bank image 2.jpg");
+  
+    /* Control the height of the image */
+    /* min-height: 700px; */
+    height:20cm;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: relative; */
+  }
+  .btn-primary
+  {
+      margin-left: 3cm;
+  }
+  .btn-primary,.btn-primary:hover {
+    color: #fff;
+    background-color: #00bace;
+    border-color: #00bace;
+}
+.badge:hover {
+-ms-transform: scale(1.1); /* IE 9 */
+-webkit-transform: scale(1.1); /* Safari 3-8 */
+transform: scale(1.1); 
+}

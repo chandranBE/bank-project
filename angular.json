@@ -1,11 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "1ac56f68-3295-4949-b680-19e71a730780"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bankproject": {
+    "learning": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,20 +20,27 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bankproject",
+            "outputPath": "dist/learning",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [ "node_modules/jquery/dist/jquery.min.js" ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -39,7 +53,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -47,33 +60,34 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bankproject:build"
+            "browserTarget": "learning:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "bankproject:build:production"
+              "browserTarget": "learning:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bankproject:build"
+            "browserTarget": "learning:build"
           }
         },
         "test": {
@@ -93,32 +107,19 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "bankproject:serve"
+            "devServerTarget": "learning:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "bankproject:serve:production"
+              "devServerTarget": "learning:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "bankproject"
+    }
+  }
 }
