@@ -23,6 +23,7 @@ import { RequestsComponent } from './requests/requests.component';
 import { UserService} from './services/user.service'
 import { ApiService } from './services/api.service';
 import { JwtService } from './services/jwt.service';
+import { OnlynumberDirective } from './create-account/onlynumber.directive';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { JwtService } from './services/jwt.service';
           ManageCardsComponent,
           BankServicesComponent,
           RequestsComponent,
+          OnlynumberDirective
   ],
   imports: [
     BrowserModule,

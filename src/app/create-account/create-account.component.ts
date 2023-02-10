@@ -62,7 +62,12 @@ export class CreateAccountComponent implements OnInit {
   {
     this.createActForm.reset()
   }
-   
+  setmask:any
+  onchange()
+  {
+    this.setmask = '(000) 000-0000'
+  }
+  
   variable1:any='will';
   variable2:any='validate'
   formvalidation()

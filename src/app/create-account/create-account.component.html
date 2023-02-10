@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                         <label for="exampleInputEmail1">Annual Income<span style="color: red;">*</span></label>
-                        <input id="income" formControlName="annualIncome" name="income" type="number"  maxlength="10" size="6" autocomplete="off" class="required form-control"
+                        <input id="income" formControlName="annualIncome" name="income" type="text"  maxlength="10" size="6" autocomplete="off" class="required form-control"
                              required="true" OnlyNumber="true">
                 </div>  
                 <div class="col-md-6 form-group">
@@ -82,7 +82,7 @@
                 <div class="col-md-6 form-group">
                         <label for="exampleInputEmail1">Permanant Account Number <span style="color: red;">*</span></label>
                         <input id="income" formControlName="pan"  name="pan" type="text" [ngModel]="pan" 
-                        (ngModelChange)="pan= $event.toUpperCase()" maxlength="10" size="6" autocomplete="off" class="required form-control"
+                        (ngModelChange)="pan= $event.toUpperCase()" minlength="10" maxlength="10" size="6" autocomplete="off" class="required form-control"
                         required >
                 </div>
                 <div class="col-md-6 form-group">
@@ -106,11 +106,11 @@
               
                 <div class="col-md-6 form-group">
                         <label for="exampleInputEmail1">Mobile Number<span style="color: red;">*</span></label>
-                        <input type="text" formControlName="mobileNumber" required="true" maxlength="10" OnlyNumber="true" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input OnlyNumber minlength="10" type="text" formControlName="mobileNumber" required="true" maxlength="10" OnlyNumber="true" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="exampleInputPassword1">Alternate Mobile Number (optional)</label>
-                    <input type="number" formControlName="altMobileNumber" maxlength="10" OnlyNumber="true"  class="form-control" id="exampleInputPassword1">
+                    <input OnlyNumber minlength="10" type="text" formControlName="altMobileNumber" maxlength="10" OnlyNumber="true"  class="form-control" id="exampleInputPassword1">
                 </div>
             </div>
             <div class="row">
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="exampleInputPassword1">Aadhaar Number<span style="color: red;">*</span></label>
-                    <input type="text" formControlName="adharNumber" class="form-control" maxlength="12" id="exampleInputPassword1" placeholder="    XXXX    XXXX    XXXX" required>
+                    <input OnlyNumber type="text" formControlName="adharNumber" class="form-control" maxlength="12" id="exampleInputPassword1" placeholder="    XXXX    XXXX    XXXX" required>
                 </div>
             </div>
             <div class="row">
@@ -151,11 +151,11 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                         <label for="exampleInputEmail1">zip code<span style="color: red;">*</span></label>
-                        <input type="text"  formControlName="zipcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <input OnlyNumber maxlength="6" type="text"  formControlName="zipcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                 </div>
                 <div class="col-md-6 form-group">
                     <label for="exampleInputEmail1">Address<span style="color: red;">*</span></label>
-                   <textarea name="address"  formControlName="address" id="address" class="form-control" required></textarea>
+                   <textarea style="height: 37px" name="address"  formControlName="address" id="address" class="form-control" required></textarea>
                 </div>
             </div>
             <div>
