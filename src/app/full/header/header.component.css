@@ -209,13 +209,13 @@ h4, .h4, h5, .h5, h6, .h6 {
     position: relative;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 .navigation-menu > li > a {
     display: block;
     color: #2b3d51;
     transition: all 0.3s ease;
-    
     padding-left: 25px;
-    padding-right: 25px;
+    padding-right: 17px;
     font-weight: 300;
     font-size: 0.95rem;
 }

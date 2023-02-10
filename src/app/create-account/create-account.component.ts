@@ -102,11 +102,11 @@ export class CreateAccountComponent implements OnInit {
       address:this.datas.address,
       adharDetails:{
                       adharNumber:this.datas.adharNumber, 
-                      imagePath:JSON.stringify(this.adharfilejson)
+                      imagePath:"chandran  encrypted adharDetails image"
                      },
       panDetails:{
                     panNumber:this.datas.pan,      
-                    imagePath:JSON.stringify(this.panfilejson)
+                    imagePath:"chandran  encrypted pan image"
                    }          
            
            
