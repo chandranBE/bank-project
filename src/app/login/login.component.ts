@@ -32,18 +32,22 @@ export class LoginComponent implements OnInit {
   loginObj:any={}
   passwordWrong:boolean=false;
   loginFunction(data)
-  {
-   
-    if(data.userId=="CHANDRANBE" && data.password==122250)
-    {
-      this.router.navigate(['/user'])
-    }
-    else if(data.userId=="" || data.password=="")
-    {
-      this.passwordWrong=false
-    }
-     else 
-       this.passwordWrong=true
+  { 
+    let payload={ userId:data.userId,password:data.password}
+   this.userService.authSession(payload).subscribe(response=>{
+   let data =response
+   console.log('authSession',data);
+   })
+    // if(data.userId=="CHANDRANBE" && data.password==122250)
+    // {
+    //   this.router.navigate(['/user'])
+    // }
+    // else if(data.userId=="" || data.password=="")
+    // {
+    //   this.passwordWrong=false
+    // }
+    //  else 
+    //    this.passwordWrong=true
   }
 
 }

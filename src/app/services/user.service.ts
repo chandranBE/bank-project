@@ -23,6 +23,10 @@ export class UserService {
   {
     return this.apiservice.get('/getAllUser').pipe(map(data=>{return data;}));
   }
+  authSession(obj)
+  {
+    return this.apiservice.post('/authSession',obj).pipe(map(data=>{return data;}));
+  }
 
   createUser(obj:any)
   {
