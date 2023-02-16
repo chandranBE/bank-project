@@ -4,14 +4,18 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { ApiService} from './api.service'
 import { map} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  public isAuthenticatedSubject=new ReplaySubject <boolean>(1);
+  private isAuthenticatedSubject=new ReplaySubject <boolean>(1);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
+  private currentUserDetails=new BehaviorSubject <any>(1);
+  public currentuserSubject = this.currentUserDetails.asObservable();
+  
 
   constructor( private apiservice:ApiService,private http: HttpClient) { }
   
@@ -23,6 +27,10 @@ export class UserService {
   createUser(obj:any)
   {
     return this.apiservice.post('/createUser',obj).pipe(map(data=>{return data;}));
+  }
+  saveLoginCred(obj:any)
+  {
+    return this.apiservice.post('/saveLoginCred',obj).pipe(map(data=>{return data;}));
   }
 
   post(obj : any)
@@ -41,5 +49,12 @@ export class UserService {
   {
     return this.http.delete("http://localhost:3000/signupDetails", obj).pipe(map(result => {return result}))
   }
+  editUser(obj)
+  {
 
+  }
+  changePassword()
+  {
+    
+  }
 }

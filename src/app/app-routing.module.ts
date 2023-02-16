@@ -14,6 +14,7 @@ import { TopupRechargeComponent } from './topup-recharge/topup-recharge.componen
 import { ManageCardsComponent } from './manage-cards/manage-cards.component';
 import { BankServicesComponent } from './bank-services/bank-services.component';
 import { RequestsComponent } from './requests/requests.component';
+import { ProfileComponent } from '../app/profile/profile.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path:'login',component:LoginComponent,},
   { path:'forgotPwd',component:ForgotPasswordComponent,},
   { path:'createAct',component:CreateAccountComponent,},
+  { path:'profile',component:ProfileComponent,},
   { path:'user',component:FullComponent,
      children:[
      

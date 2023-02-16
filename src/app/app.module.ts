@@ -24,6 +24,12 @@ import { UserService} from './services/user.service'
 import { ApiService } from './services/api.service';
 import { JwtService } from './services/jwt.service';
 import { OnlynumberDirective } from './create-account/onlynumber.directive';
+import { ProfileComponent } from '../app/profile/profile.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ToastrModule } from 'ngx-toastr';
+// import { NgxPaginationModule } from 'ngx-pagination/NgxPaginationModule';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,8 @@ import { OnlynumberDirective } from './create-account/onlynumber.directive';
           ManageCardsComponent,
           BankServicesComponent,
           RequestsComponent,
-          OnlynumberDirective
+          OnlynumberDirective,
+          ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,12 @@ import { OnlynumberDirective } from './create-account/onlynumber.directive';
     FormsModule,
     ReactiveFormsModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    TabsModule,
+    ModalModule,
+    TooltipModule,
+    ToastrModule.forRoot()
+    // NgxPaginationModule,
   
  
    

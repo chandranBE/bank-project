@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   api_url:"http://localhost:8080",
   //api_url:"https://dummy.restapiexample.com"
+  img_url:''
+  
 };
 
 /*

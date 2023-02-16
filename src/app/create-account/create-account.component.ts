@@ -11,8 +11,11 @@ import { UserService } from '../services/user.service';
 export class CreateAccountComponent implements OnInit {
 
   createActForm:FormGroup 
+  loginCredForm:FormGroup
   pan = "";
   constructor(private userservice:UserService, private fb:FormBuilder,) { }
+
+  createAccount:boolean=true
 
   ngOnInit(): void {
     // this.todaydate()
@@ -42,7 +45,11 @@ export class CreateAccountComponent implements OnInit {
         address:['',Validators.required]
       }
     )
-    
+    this.loginCredForm=this.fb.group({
+       userId:['',Validators.required],
+       password:['',Validators.required]
+    })
+     
   }
   date:any
   datepipe:DatePipe;
@@ -125,7 +132,7 @@ export class CreateAccountComponent implements OnInit {
   JSONObject:any
   showspinner:boolean=false
   edata:any;
-
+ 
   fileuploadsingle(e){
    this.edata=e
     console.log(this.edata.target.id)
@@ -173,6 +180,15 @@ export class CreateAccountComponent implements OnInit {
       }
 }
 
+  } 
+  saveLoginCred(value)
+  { 
+
+    this.userservice.saveLoginCred(value).subscribe(data=>{
+      console.log('data',data);
+    })
+    // this.loginCredForm.reset()
+    console.log('value',value);
   }
 
 
