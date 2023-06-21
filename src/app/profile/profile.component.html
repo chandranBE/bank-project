@@ -1,499 +1,258 @@
-<div class="container container-fluid" style="margin-top:7.5rem;">
-    <div class="main-body">
-    
-          <!-- Breadcrumb -->
-          <nav  aria-label="breadcrumb" class="main-breadcrumb ">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-            </ol>
-          </nav>
-          <!-- /Breadcrumb -->
-         <!-- <div>
-          <tabset [vertical]="true">
-            <tab heading="Profile information" class="ml-1" id="tab1"></tab>
-            <tab heading="Edit Information" class="ml-1" id="tab2"></tab>
-            <tab heading="Change Password" class="ml-1" id="tab3"></tab>
-          </tabset>
-         </div> -->
-          
-    
-          <!-- <div  class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="./assets/images/default_img.png" alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">
-                    <input *ngIf="editMode" style="display:none" type="file" name="logofile" id="logo"
-                          accept="image/x-png, image/gif, image/jpeg" class="required form-control"
-                          (change)="fileUpload($event)" required>
-                    <div class="mt-3">
-                      <h4>  {{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
-                      <p class="text-secondary mb-1"> {{currentUserDetails.userTitle}}</p>
-                      <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p>
-                      <a href="" *ngIf="editMode" > <label for="logo" class="badge badge-info">Change photo </label></a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div  *ngIf="viewMode" class="col-md-8 mb-5 ">
-              <div class="card p-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Title</h6>
-                    </div>
-                    <div class="col-sm-8 text-secondary">
-                      {{currentUserDetails.userTitle}} 
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Name</h6>
-                    </div>
-                    <div class="col-sm-8 text-secondary">
-                      {{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Email</h6>
-                    </div>
-                    <div class="col-sm-8 text-secondary">
-                      {{currentUserDetails.email}}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Date Of Birth</h6>
-                    </div>
-                    <div class="col-sm-8 text-secondary">
-                      {{currentUserDetails.dob}}
+<app-header></app-header>
+<div class="container box-shadow container-fluid" style="margin-top:2.5rem;">
+  <div class="main-body">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb ">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" routerLink="/user/myAct"><a href="javascript:void(0)">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+  </div>
+</div>
 
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Gender</h6>
-                    </div>
-                    <div *ngIf=" currentUserDetails.gender!=null" class="col-sm-8 text-secondary">
-                          {{currentUserDetails.gender}}
-                    </div>
-                    <div *ngIf=" currentUserDetails.gender==null" class="col-sm-8 text-secondary">
-                       N/A
-                   </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h6 class="mb-0">Address</h6>
-                    </div>
-                    <div *ngIf=" currentUserDetails.addressDetailId !=null" class="col-sm-8 text-secondary">
-                      {{currentUserDetails.addressDetailId}}
-                    </div>
-                    <div *ngIf=" currentUserDetails.addressDetailId==null" class="col-sm-8 text-secondary">
-                      N/A
-                  </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-12 text-center">
-                      <a class="btn btn-info " (click)="onclick()">Edit</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- second Division -->
-            <!-- <div *ngIf="editMode"class="col-md-8 mb-5"  >
-              <form [formGroup]="editForm" (ngSubmit)="editFunction(editForm.value)" > 
-                <div class="card p-3">
-                    <div class="card-body p-3 ">
-                      <div class="row mb-3">
-                        <div class="col-sm-4">
-                            <h6 class="mb-0">Title</h6>
-                        </div>
-                        <div class="col-sm-8 text-secondary">
-                            <input type="text" formControlName="userTitle" name="name" class="form-control" value="{{currentUserDetails.userTitle}} ">
+<div class="wrapper ">
+  <!-- Page-Container -->
+  <div class="container ">
+    <div class="row " style="overflow-x:hidden">
+      <div class="col-12">
+        <div class="card-box">
+          <div class="row m-t-20">
+            <div class="col-12">
+              <tabset class="tabset tapAlignment " [vertical]="true" type="pills">
+                <tab customClass="nav-purplelink" heading="My Profile">
+                  <div class="col-md-8 mb-4 ">
+                    <div class="card p-3">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img [src]="currentUserDetails.userimagepath ? currentUserDetails.userimagepath : defaultImg "
+                          alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">
+                        <div class="mt-3">
+                          <h4>{{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
+                          <p class="text-info mb-1">Manager</p>
+                          <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p>
                         </div>
                       </div>
-                      <div class="row mb-3">
-                        <div class="col-sm-4">
-                            <h6 class="mb-0">User Name</h6>
+                      <div class="card-body ">
+                        <div class="row ">
+                          <div class="col-sm-6">
+                            <h6 class="mb-0 text-center">Title</h6>
+                          </div>
+                          <div class="col-sm-6 text-success">
+                            Manager
+                          </div>
                         </div>
-                        <div class="col-sm-8 text-secondary">
-                            <input type="text" formControlName="userName" name="userName"  class="form-control" value="currentUserDetails.userName">
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <h6 class="mb-0 text-center">Name</h6>
+                          </div>
+                          <div class="col-sm-6 text-primary">
+                            {{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row ">
+                          <div class="col-sm-6">
+                            <h6 class="mb-0 text-center">Email</h6>
+                          </div>
+                          <div class="col-sm-6 text-primary">
+                            {{currentUserDetails.email}}
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <h6 class="mb-0 text-center">Date Of Birth</h6>
+                          </div>
+                          <div class="col-sm-6 text-primary">
+                            {{currentUserDetails.dob}}
+
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="row ">
+                          <div class="col-sm-6">
+                            <h6 class="mb-0 text-center">Gender</h6>
+                          </div>
+                          <div *ngIf=" currentUserDetails.gender!=null" class="col-sm-6 text-primary">
+                            {{currentUserDetails.gender}}
+                          </div>
+                          <div *ngIf=" currentUserDetails.gender==null" class="col-sm-6 text-primary">
+                            N/A
+                          </div>
                         </div>
                       </div>
-                        <div class="row mb-3">
+                    </div>
+                  </div>
+                </tab>
+                <tab heading="Edit Profile">
+                  <div class="col-md-8 mb-3">
+                    <form [formGroup]="editForm" (ngSubmit)="editFunction(editForm.value)">
+                      <!-- <app-create-account></app-create-account> -->
+                      <div class="card p-3">
+                        <div class="d-flex flex-column align-items-center text-center">
+                          <img [src]="currentUserDetails.userimagepath ? currentUserDetails.userimagepath :defaultImg"
+                            alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">
+                          <input style="display:none" type="file" name="logofile" id="logo"
+                            accept="image/x-png, image/gif, image/jpeg" class="required form-control"
+                            (change)="fileUpload($event)" required>
+
+                          <div class="mt-3">
+                            <h4>{{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
+                            <!-- <p class="text-secondary mb-1">{{currentUserDetails.userTitle}}</p> -->
+                            <!-- <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p> -->
+                            <a href=""> <label for="logo" class="badge badge-info">Change photo </label></a>
+                          </div>
+                        </div>
+                        <div class="card-body p-3 ">
+                          <div class="row mb-3">
                             <div class="col-sm-4">
-                                <h6 class="mb-0">First Name</h6>
+                              <h6 class="mb-0">Title</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" formControlName="userFirstName" name="fname" class="form-control" value="{{currentUserDetails.firstName}} ">
+                              <input type="text"  name="name" class="form-control"
+                                value="Manager">
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-sm-4">
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-sm-4">
+                              <h6 class="mb-0">First Name</h6>
+                            </div>
+                            <div class="col-sm-8 text-secondary">
+                              <input type="text" formControlName="firstName" name="fname" class="form-control"
+                                value="{{currentUserDetails.firstName}}">
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-sm-4">
                               <h6 class="mb-0">Last Name</h6>
-                          </div>
-                          <div class="col-sm-8 text-secondary">
-                              <input type="text" formControlName="userLastName" name="lname" class="form-control" value="{{currentUserDetails.lastName}}">
-                          </div>
-                      </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" formControlName="email" name="email" class="form-control" value="{{currentUserDetails.email}}">
+                              <input type="text" formControlName="lastName" name="lname" class="form-control"
+                                value="{{currentUserDetails.lastName}}">
                             </div>
-                        </div>
-                        <div class="row mb-3">
+                          </div>
+                          <div class="row mb-3">
                             <div class="col-sm-4">
-                                <h6 class="mb-0">Date of birth</h6>
+                              <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="date" min="1950-01-01" max="2004-10-06" value="{{currentUserDetails.dob}}"   formControlName="dob" name="dob" class="form-control" value="{{currentUserDetails.dob}}">
+                              <input type="text" formControlName="email" name="email" class="form-control"
+                                value="{{currentUserDetails.email}}">
                             </div>
-                        </div>
-                        <div class="row mb-3">
+                          </div>
+                          <div class="dx-field row mb-3">
                             <div class="col-sm-4">
-                                <h6 class="mb-0">Gender</h6>
+                              <h6 class="mb-0 ">Date of birth</h6>
+                            </div>
+                            <div class="col-sm-8">
+                              <input type="date" formControlName="dob" class="form-control" id="start" name="trip-start"
+                                value="{{currentUserDetails.dob}"  min="1922-01-01" max="2023-01-01" required>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col-sm-4">
+                              <h6 class="mb-0">Gender</h6>
                             </div>
                             <div class="col-8">
-                                <select class="form-select form-control "  name="gender" formControlName="gender" aria-label="Default select example"  placeholder="Choose Gender">
-                                       <option  value="" selected >Choose</option> 
-                                       <option  >Male</option> 
-                                       <option  >Female</option>
-                                </select>
+                              <select class="form-select form-control " name="gender" formControlName="gender"
+                                aria-label="Default select example" placeholder="Choose Gender" [(ngModel)]="currentUserDetails.gender">
+                                <option value="" selected>Choose</option>
+                                <option value="male" >Male</option>
+                                <option value="female">FeMale</option>
+                              </select>
                             </div>
-                        </div>
-                        <div class="text-center">
-                              <button class="btn btn-primary" type="submit" disabled on-click="this.mode='view' "> Save Changes</button>
-                              <button class="btn btn-primary" type="submit"  (click)="onclick()"> view</button>
-                        </div>
-                    </div>
-                </div>
-              </form>    
-            </div> -->
-
-
-          </div>
-        </div>
-    <!-- </div> -->
-
-<!-- <div  class="container container-fluid mb-5" >
-    <div class="main-body pb-0">
-        <div class="row"> -->
-            <!-- <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body p-3">
-                        <div class="d-flex flex-column align-items-center text-center">
-                            <img src="./assets/images/default_img.png" alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">
-                             <input style="display:none" type="file" name="logofile" id="logo"
-                                  accept="image/x-png, image/gif, image/jpeg" class="required form-control"
-                                  (change)="fileUpload($event)" required>
-                               
-                            <div class="mt-3">
-                                <h4>{{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
-                                <p class="text-secondary mb-1">{{currentUserDetails.userTitle}}</p>
-                                <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p>
-                               <a href="" > <label for="logo" class="badge badge-info">Change photo </label></a>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        -->
-           
-         
-        <!-- </div>
-    </div>
-</div> -->
-
-  <div class="wrapper ">
-    <!-- Page-Container -->
-    <div class="container ">
-      <div class="row " style="overflow-x:hidden">
-        <div class="col-12">
-          <div class="card-box">
-            <div class="row m-t-20">
-              <div class="col-12">
-                <tabset class="tabset tapAlignment " [vertical]="true" type="pills" >
-                  <tab customClass="nav-purplelink"  heading="My Profile">
-                    <div   class="col-md-8 mb-4 ">
-                      <div class="card p-3" >
-                        <div class="d-flex flex-column align-items-center text-center">
-                          <img [src]="currentUserDetails.userimagepath" alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">  
-                          <div class="mt-3">
-                              <h4>{{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
-                              <p class="text-secondary mb-1">{{currentUserDetails.userTitle}}</p>
-                              <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p>
                           </div>
-                        </div>
-                        <div class="card-body ">
-                          <div class="row ">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Title</h6>
-                              </div>
-                              <div class="col-sm-6 text-primary">
-                                {{currentUserDetails.userTitle}} 
-                              </div>
+                          <div class="text-center">
+                            <button class="btn btn-primary" type="submit" [disabled]="editForm.invalid"> Save Changes</button>
                           </div>
-                          <hr>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Name</h6>
-                              </div>
-                              <div class="col-sm-6 text-primary">
-                                {{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}
-                              </div>
-                          </div>
-                          <hr>
-                          <div class="row ">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Email</h6>
-                              </div>
-                              <div class="col-sm-6 text-primary">
-                                {{currentUserDetails.email}}
-                              </div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Date Of Birth</h6>
-                              </div>
-                              <div class="col-sm-6 text-primary">
-                                {{currentUserDetails.dob}}
-          
-                              </div>
-                          </div>
-                          <hr>
-                          <div class="row ">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Gender</h6>
-                              </div>
-                              <div *ngIf=" currentUserDetails.gender!=null" class="col-sm-6 text-primary">
-                                    {{currentUserDetails.gender}}
-                              </div>
-                              <div *ngIf=" currentUserDetails.gender==null" class="col-sm-6 text-primary">
-                                N/A
-                              </div>
-                          </div>
-                          <!-- <hr>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                <h6 class="mb-0 text-center">Address</h6>
-                              </div>
-                              <div *ngIf=" currentUserDetails.addressDetailId !=null" class="col-sm-6 text-primary">
-                                {{currentUserDetails.addressDetailId}}
-                              </div>
-                              <div *ngIf=" currentUserDetails.addressDetailId==null" class="col-sm-6 text-primary">
-                                N/A
-                              </div>
-                          </div> -->
                         </div>
                       </div>
-                    </div>
-                  </tab>
-                  <tab heading="Edit Profile"  >      
-                    <div class="col-md-8 mb-3"  >
-                      <form [formGroup]="editForm" (ngSubmit)="editFunction(editForm.value)" > 
-                        <div class="card p-3">
-                            <div class="d-flex flex-column align-items-center text-center">
-                              <img [src]="currentUserDetails.userimagepath" alt="Admin" class=" ml-1 img-thumbnail rounded-circle avatar-lg me-2" width="150">
-                              <input style="display:none" type="file" name="logofile" id="logo"
-                                    accept="image/x-png, image/gif, image/jpeg" class="required form-control"
-                                    (change)="fileUpload($event)" required>
-                                
-                              <div class="mt-3">
-                                  <h4>{{currentUserDetails.firstName}} &nbsp;{{currentUserDetails.lastName}}</h4>
-                                  <p class="text-secondary mb-1">{{currentUserDetails.userTitle}}</p>
-                                  <p class="text-muted font-size-sm">{{currentUserDetails.addressDetailId}}</p>
-                                <a href="" > <label for="logo" class="badge badge-info">Change photo </label></a>  
-                              </div>
+                    </form>
+                  </div>
+                </tab>
+                <tab heading="Change Password ">
+                  <div class="col-md-8 mb-3 ">
+                    <div class="card p-3  ">
+                      <div class="changepwd">
+                        <form action="changepwd" #changepwd="ngForm"
+                          (ngSubmit)="changePasswordFunction(changepwd.form.value)">
+                          <div class="mb-3 row">
+                            <div class="float-end col-6 ml-3 mt-2 ">
+                              <label class="form-label" for="password-input">Current Password <span
+                                  class="text-danger">*</span></label>
                             </div>
-                            <div class="card-body p-3 ">
-                              <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <h6 class="mb-0">Title</h6>
-                                </div>
-                                <div class="col-sm-8 text-secondary">
-                                    <input type="text" formControlName="userTitle" name="name" class="form-control" value="{{currentUserDetails.userTitle}} ">
-                                </div>
-                              </div>
-                              <div class="row mb-3">
-                                <div class="col-sm-4">
-                                    <h6 class="mb-0">User Name</h6>
-                                </div>
-                                <div class="col-sm-8 text-secondary">
-                                    <input type="text" formControlName="userName" name="userName"  class="form-control" value="currentUserDetails.userName">
-                                </div>
-                              </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-4">
-                                        <h6 class="mb-0">First Name</h6>
-                                    </div>
-                                    <div class="col-sm-8 text-secondary">
-                                        <input type="text" formControlName="userFirstName" name="fname" class="form-control" value="{{currentUserDetails.firstName}} ">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                  <div class="col-sm-4">
-                                      <h6 class="mb-0">Last Name</h6>
-                                  </div>
-                                  <div class="col-sm-8 text-secondary">
-                                      <input type="text" formControlName="userLastName" name="lname" class="form-control" value="{{currentUserDetails.lastName}}">
-                                  </div>
-                              </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-4">
-                                        <h6 class="mb-0">Email</h6>
-                                    </div>
-                                    <div class="col-sm-8 text-secondary">
-                                        <input type="text" formControlName="email" name="email" class="form-control" value="{{currentUserDetails.email}}">
-                                    </div>
-                                </div>
-                                <!-- <div class="row mb-3">
-                                    <div class="col-sm-4">
-                                        <h6 class="mb-0">Date of birth</h6>
-                                    </div>
-                                    <div class="col-sm-8 text-secondary">
-                                        <input type="date" min="1950-01-01" max="2004-10-06"    formControlName="dob" name="dob" class="form-control" value="{{currentUserDetails.dob}}">
-                                    </div>
-                                </div> -->
-                                <div class="dx-field row mb-3">
-                                  <h6 class="mb-0 col-sm-4">Date of birth</h6>
-                                  <!-- <div class="col-sm-8">
-                                    <dx-date-box
-                                      placeholder="Start Date"
-                                      [showClearButton]="true"
-                                      [useMaskBehavior]="true"
-                                      displayFormat="shortdate"
-                                      type="date"    formControlName="dob"  [value]="currentUserDetails.dob"
-                                    >
-                                    </dx-date-box>
-                                  </div> -->
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-4">
-                                        <h6 class="mb-0">Gender</h6>
-                                    </div>
-                                    <div class="col-8">
-                                        <select class="form-select form-control "   name="gender" formControlName="gender" aria-label="Default select example"  placeholder="Choose Gender">
-                                               <option  value="" selected >Choose</option> 
-                                               <option  >Male</option> 
-                                               <option  >FeMale</option>                                        
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                      <button class="btn btn-primary" type="submit"> Save Changes</button>
-                                </div>
+                            <div class="position-relative auth-pass-inputgroup mb-1 col-6 ml-5 w-100 mt-2">
+                              <input type="text" class="form-control pe-5" placeholder="Current password" #newPwd
+                                [(ngModel)]="changePassword.currentPwd" name="currentPwd" id="input" required>
                             </div>
-                        </div>
-                      </form>    
-                    </div>
-                  </tab>
-                  <tab heading="Change Password " > 
-                    <div   class="col-md-8 mb-3 ">
-                      <div class="card p-3  " >
-                        <div class="changepwd">
-                            <form action="changepwd" #changepwd="ngForm" (ngSubmit)="changePasswordFunction(changepwd.form.value)">
-                                <!-- <div class="row">
-                                  <label for="currenPwd" class="col-6 ml-3 "> Current Password <span class="text-danger">*</span> </label>
-                                  <input class="col-6 w-75 ml-5 form-control mt-2" #currentPwd [(ngModel)]="changePassword.currentPwd" type="text" placeholder="Enter Curent Password" name="CurrentPwd">
-                                </div> -->
-                                <div class="mb-3 row">
-                                  <div class="float-end col-6 ml-3 mt-2 ">
-                                    <label class="form-label" for="password-input">Current Password  <span class="text-danger">*</span></label>
-                                  </div>
-                                  <div class="position-relative auth-pass-inputgroup mb-1 col-6 ml-5 w-75 mt-2">
-                                    <input type="text" class="form-control pe-5" placeholder="Current password" #newPwd  [(ngModel)]="changePassword.currentPwd" name="currentPwd"
-                                      id="input" required>
-                                  </div>
-                                </div>
-                                <!-- <div class="row mt-2       ">
-                                 
-                                  <label for="NewPwd" class="col-6 ml-3 mt-2"> New Password  <span class="text-danger">*</span> </label>
-                                  <a (click)="toggleShow($event,'showeye1','input1')"><span toggle="#password-field"
-                                    id="showeye1" class="fa fa-fw fa-eye eye-field-icon eyeIcon toggle-password"></span></a>
-                                  <input class="col-6 w-75 ml-5 form-control mt-2" #newPwd [(ngModel)]="changePassword.newPwd" id="input1" type="password" placeholder="Enter New Password" name="NewPwd">
-                                
-                                </div> -->
-                                <div class="mb-3 row">
-                                  <div class="float-end col-6 ml-3 mt-2 ">
-                                    <label class="form-label" for="password-input">New Password  <span class="text-danger">*</span></label>
-                                  </div>
-                                  <div class="position-relative auth-pass-inputgroup tooltip2 mb-1 col-6 ml-5 w-75 mt-2">
-                                    <input  type="password" class="form-control pe-5" placeholder="New password" #newPwd  [(ngModel)]="changePassword.newPwd"  name="newPwd" minlength="8" maxlength="32"
-                                           id="input1" required placement="top" (keyup)="onKey1($event)"   (focus)="focus($event,'show')" (blur)="outfocus($event,'show')" >
-                                      <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button"  (click)="toggleShow($event,'showeye1','input1')">
-                                           <i class="ri-eye-fill align-middle" id="showeye1"></i>
-                                      </button>
-                                      <span class="tooltiptext2" id="show">
-                                        <em *ngIf="!passkey3" class="fa fa-times reqf new"></em><em *ngIf="passkey3"
-                                          class="fa reqf fa-check req1"></em> Must be <strong>8 to 32 characters
-                                          long </strong> <br>
-                                        <em *ngIf="!passkey1" class="fa fa-times reqf new"></em><em *ngIf="passkey1"
-                                          class="fa reqf fa-check req1"></em> Must have <strong>1 uppercase
-                                          letter</strong> <br>
-                                        <em *ngIf="!passkey" class="fa fa-times reqf new"></em><em *ngIf="passkey"
-                                          class="fa reqf fa-check req1"></em> Must have <strong>1 lowercase
-                                          letter</strong> <br>
-                                        <em *ngIf="!passkey2" class="fa fa-times reqf new"></em><em *ngIf="passkey2"
-                                          class="fa reqf fa-check req1"></em> Must have <strong>1 number
-                                        </strong><br>
-                                        <em *ngIf="!passkey4" class="fa fa-times reqf new"></em><em *ngIf="passkey4"
-                                          class="fa reqf fa-check req1"></em> Must have <strong>at least 1 special character
-                                          like !,@,$,#,% </strong>
-                                      </span>  
-                                  </div>
-                                </div>
-                                <div class="mb-3 row">
-                                  <div class="float-end col-6 ml-3 mt-2 ">
-                                    <label class="form-label" for="password-input" >Confirm Password  <span class="text-danger">*</span></label>
-                                  </div>
-                                  <div class="position-relative auth-pass-inputgroup  mb-3 col-6 ml-5 w-75 mt-2">
-                                    <input type="password" class="form-control pe-5" placeholder="Confirm password" #confirmPwd [(ngModel)]="changePassword.confirmPwd" name="ConfirmPwd"
-                                      id="input2" required   >
-                                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted"
-                                      type="button"  (click)="toggleShow($event,'showeye2','input2')"><i class="ri-eye-fill align-middle" id="showeye2"></i></button>     
-                                  </div>
-                                  <span class="text-danger" *ngIf="errorMessage!=''">{{errorMessage}}</span> 
-                                  <span class="text-danger" *ngIf="newConfirm">New password and confirm password should be same ! </span> 
-                                   
-                                </div>
-                          
-                                <!-- <div class="row mt-2">
-                                  <label for="ConfirmPwd" class="col-6 ml-3 mt-2"> Confirm Password <span class="text-danger">*</span> </label>
-                                  <a (click)="toggleShow($event,'showeye2','input2')"><span toggle="#password-field"
-                                    id="showeye2" class="fa fa-fw fa-eye eye-field-icon toggle-password eyeIcon"></span></a>
-                                  <input class="col-6 ml-5 w-75 form-control mt-2" #confirmPwd [(ngModel)]="changePassword.confirmPwd" id="input2" type="password" placeholder="Enter Confirm Password" name="ConfirmPwd">
-                                </div> -->
-                                <div class="mt-3 text-center " style="margin-left: -3cm;">
-                                  <button class=" btn btn-primary btn-md w-25" type="submit" [disabled]="changepwd.invalid"  > Change</button>
-                                </div>  
-                            </form>
-                        </div>
-                      </div>
-                    </div>  
-                  </tab>
-                </tabset>
-              </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <div class="float-end col-6 ml-3 mt-2 ">
+                              <label class="form-label" for="password-input">New Password <span
+                                  class="text-danger">*</span></label>
+                            </div>
+                            <div class="position-relative auth-pass-inputgroup tooltip2 mb-1 col-6 ml-5 w-100 mt-2">
+                              <input type="password" class="form-control pe-5" placeholder="New password" #newPwd
+                                [(ngModel)]="changePassword.newPwd" name="newPwd" minlength="8" maxlength="32"
+                                id="input1" required placement="top" (keyup)="onKey1($event)"
+                                (focus)="focus($event,'show')" (blur)="outfocus($event,'show')">
+                              <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted"
+                                type="button" (click)="toggleShow($event,'showeye1','input1')">
+                                <i class="ri-eye-fill align-middle" id="showeye1"></i>
+                              </button>
+                              <span class="tooltiptext2" id="show">
+                                <em *ngIf="!passkey3" class="fa fa-times reqf new"></em><em *ngIf="passkey3"
+                                  class="fa reqf fa-check req1"></em> Must be <strong>8 to 32 characters
+                                  long </strong> <br>
+                                <em *ngIf="!passkey1" class="fa fa-times reqf new"></em><em *ngIf="passkey1"
+                                  class="fa reqf fa-check req1"></em> Must have <strong>1 uppercase
+                                  letter</strong> <br>
+                                <em *ngIf="!passkey" class="fa fa-times reqf new"></em><em *ngIf="passkey"
+                                  class="fa reqf fa-check req1"></em> Must have <strong>1 lowercase
+                                  letter</strong> <br>
+                                <em *ngIf="!passkey2" class="fa fa-times reqf new"></em><em *ngIf="passkey2"
+                                  class="fa reqf fa-check req1"></em> Must have <strong>1 number
+                                </strong><br>
+                                <em *ngIf="!passkey4" class="fa fa-times reqf new"></em><em *ngIf="passkey4"
+                                  class="fa reqf fa-check req1"></em> Must have <strong>at least 1 special character
+                                  like !,@,$,#,% </strong>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <div class="float-end col-6 ml-3 mt-2 ">
+                              <label class="form-label" for="password-input">Confirm Password <span
+                                  class="text-danger">*</span></label>
+                            </div>
+                            <div class="position-relative auth-pass-inputgroup  mb-3 col-6 ml-5 w-100 mt-2">
+                              <input type="password" class="form-control pe-5" placeholder="Confirm password"
+                                #confirmPwd [(ngModel)]="changePassword.confirmPwd" name="ConfirmPwd" id="input2"
+                                required>
+                              <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted"
+                                type="button" (click)="toggleShow($event,'showeye2','input2')"><i
+                                  class="ri-eye-fill align-middle" id="showeye2"></i></button>
+                            </div>
+                            <span class="text-danger" *ngIf="errorMessage!=''">{{errorMessage}}</span>
+                            <span class=" text-danger" *ngIf="newConfirm">New password and confirm password should be
+                              same ! </span>
+                            </div>
+                            <div class="mt-3 text-center " style="margin-left: -3cm;">
+                              <button class=" btn btn-primary btn-md w-25" type="submit" [disabled]="changepwd.invalid">
+                                Change</button>
+                            </div>
+                    </form>
+                  </div>
             </div>
           </div>
+          </tab>
+          </tabset>
         </div>
       </div>
     </div>
   </div>
-
-
-
+</div>
+</div>
+</div>
+<app-footer></app-footer>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url:"http://localhost:8080",
+  api_url:"http://192.168.5.216:999",
   //api_url:"https://dummy.restapiexample.com"
   img_url:''
   

@@ -17,7 +17,7 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" required>
       </div>
-      <p *ngIf="passwordWrong " style="color: red;"> loginId or password is incorrect</p>
+      <p *ngIf="passwordWrong " class="text-center" style="color: red;"> loginId or password is incorrect</p>
 
       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary"
         style="margin-bottom: 5px;width: 3cm;">Login</button>

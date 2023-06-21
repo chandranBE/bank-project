@@ -25,13 +25,10 @@ const routes: Routes = [
   { path:'createAct',component:CreateAccountComponent,},
   { path:'profile',component:ProfileComponent,},
   { path:'user',component:FullComponent,
-     children:[
-     
+     children:[     
       { path:'',component:MyAccountsComponent },   
       { path:'myAct',component:MyAccountsComponent,
-        children:[
-          { path:'createAct',component:CreateAccountComponent,},
-        ] },
+        children:[{ path:'createAct',component:CreateAccountComponent,}] },
       { path:'fundTrs',component:FundTransferComponent,},
       { path:'edeposits',component:EDepositsComponent},
       { path:'billpymts',component:BillPaymentsComponent},
@@ -39,11 +36,7 @@ const routes: Routes = [
       { path:'manageCards',component:ManageCardsComponent},
       { path:'services',component:BankServicesComponent},
       { path:'requests',component:RequestsComponent}
-     ]}
-
-  
-
- 
+     ]} 
 ];
 
 @NgModule({

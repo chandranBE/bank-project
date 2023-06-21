@@ -1,11 +1,10 @@
 
 
 .container {
-  position: absolute;
+
   max-width: 10cm;
   /* margin-right: 14.5cm; */
-  margin-left: 35%;
-  margin-top: 3.5cm;
+
   background-color: khaki;
   border-radius: 10px;
    
@@ -16,11 +15,14 @@
   
     /* Control the height of the image */
     /* min-height: 700px; */
-    height:20cm;
+    height:100vh;
+    position: relative;
     /* Center and scale the image nicely */
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
+    justify-content: center;
+     display: flex;
     /* position: relative; */
   }
   .btn-primary
